@@ -1,0 +1,274 @@
+{
+ "Acme Sync Pro now costs $12 per user per month. Every plan includes SSO. Files sync in under 2 seconds on average. Pro customers get 24/7 phone support. Offline mode is available on iOS and Android.": {
+  "report": [
+   {
+    "claim": "Acme Sync Pro now costs $12 per user per month.",
+    "passages": [
+     {
+      "id": "pricing-2026-10#1",
+      "doc": "pricing-2026-10",
+      "title": "Acme Sync pricing (October 2026).",
+      "text": "Pro costs $15 per user per month, billed annually.",
+      "action": "use",
+      "score": 0.9263
+     }
+    ],
+    "verdict": "contradicted",
+    "p": 0.9953,
+    "evidence": {
+     "document": "pricing-2026-10#1",
+     "quote": "Pro costs $15 per user per month, billed annually.",
+     "start": 34,
+     "end": 84,
+     "confidence": 0.534
+    },
+    "staleSource": "pricing-2026-03",
+    "staleQuote": "Pro costs $12 per user per month, billed annually.",
+    "status": "red"
+   },
+   {
+    "claim": "Every plan includes SSO.",
+    "passages": [
+     {
+      "id": "pricing-2026-10#2",
+      "doc": "pricing-2026-10",
+      "title": "Acme Sync pricing (October 2026).",
+      "text": "SSO is included on the Business and Enterprise plans only.",
+      "action": "use",
+      "score": 0.9777
+     }
+    ],
+    "verdict": "contradicted",
+    "p": 0.9961,
+    "evidence": {
+     "document": "pricing-2026-10#2",
+     "quote": "SSO is included on the Business and Enterprise plans only.",
+     "start": 34,
+     "end": 92,
+     "confidence": 1
+    },
+    "status": "red"
+   },
+   {
+    "claim": "Files sync in under 2 seconds on average.",
+    "passages": [
+     {
+      "id": "release-notes-4.2#1",
+      "doc": "release-notes-4.2",
+      "title": "Release 4.2.",
+      "text": "Median sync time dropped to 2.4 seconds.",
+      "action": "use",
+      "score": 0.8554
+     }
+    ],
+    "verdict": "contradicted",
+    "p": 0.9763,
+    "evidence": {
+     "document": "release-notes-4.2#1",
+     "quote": "Median sync time dropped to 2.4 seconds.",
+     "start": 13,
+     "end": 53,
+     "confidence": 0.641
+    },
+    "status": "red"
+   },
+   {
+    "claim": "Pro customers get 24/7 phone support.",
+    "passages": [],
+    "noDirectEvidence": true,
+    "verdict": "contradicted",
+    "p": 0.5001,
+    "evidence": {
+     "document": "release-notes-4.2",
+     "quote": "Pro support: email support with a 24-hour response target.",
+     "start": 123,
+     "end": 181,
+     "confidence": 0.999
+    },
+    "status": "red"
+   },
+   {
+    "claim": "Offline mode is available on iOS and Android.",
+    "passages": [
+     {
+      "id": "release-notes-4.2#2",
+      "doc": "release-notes-4.2",
+      "title": "Release 4.2.",
+      "text": "Offline mode is now available on iOS. Android support is planned.",
+      "action": "expand",
+      "score": 0.073
+     }
+    ],
+    "verdict": "contradicted",
+    "p": 0.9935,
+    "evidence": {
+     "document": "release-notes-4.2",
+     "quote": "Offline mode is now available on iOS. Android support is planned.",
+     "fromRerank": true
+    },
+    "status": "red"
+   }
+  ],
+  "conflicts": [
+   {
+    "a": "pricing-2026-10",
+    "b": "pricing-2026-03",
+    "stale": "pricing-2026-03",
+    "findings": [
+     {
+      "a": "Acme Sync pricing (October 2026).",
+      "b": "Acme Sync pricing (March 2026).\n\nPro costs $12 per user per month, billed annually.\n\nSSO is included on the Business and Enterprise plans only."
+     }
+    ]
+   }
+  ],
+  "stale": [
+   "pricing-2026-03"
+  ],
+  "errors": [],
+  "trace": [
+   "compare: 3 pairs, 1 conflicting"
+  ],
+  "live": false,
+  "recorded": "2026-11-02T08:51:50.121Z"
+ },
+ "Acme Sync Pro costs $15 per user per month, billed annually. SSO is included on the Business and Enterprise plans. Median sync time is now 2.4 seconds. Pro customers get email support with a 24-hour response target. Offline mode is now available on iOS.": {
+  "report": [
+   {
+    "claim": "Acme Sync Pro costs $15 per user per month, billed annually.",
+    "passages": [
+     {
+      "id": "pricing-2026-10#1",
+      "doc": "pricing-2026-10",
+      "title": "Acme Sync pricing (October 2026).",
+      "text": "Pro costs $15 per user per month, billed annually.",
+      "action": "use",
+      "score": 0.9927
+     }
+    ],
+    "verdict": "supported",
+    "p": 0.9953,
+    "evidence": {
+     "document": "pricing-2026-10#1",
+     "quote": "Pro costs $15 per user per month, billed annually.",
+     "start": 34,
+     "end": 84,
+     "confidence": 1
+    },
+    "status": "green"
+   },
+   {
+    "claim": "SSO is included on the Business and Enterprise plans.",
+    "passages": [
+     {
+      "id": "pricing-2026-10#2",
+      "doc": "pricing-2026-10",
+      "title": "Acme Sync pricing (October 2026).",
+      "text": "SSO is included on the Business and Enterprise plans only.",
+      "action": "use",
+      "score": 0.9948
+     }
+    ],
+    "verdict": "supported",
+    "p": 0.9952,
+    "evidence": {
+     "document": "pricing-2026-10",
+     "quote": "SSO is included on the Business and Enterprise plans only.",
+     "fromRerank": true
+    },
+    "status": "green"
+   },
+   {
+    "claim": "Median sync time is now 2.4 seconds.",
+    "passages": [
+     {
+      "id": "release-notes-4.2#1",
+      "doc": "release-notes-4.2",
+      "title": "Release 4.2.",
+      "text": "Median sync time dropped to 2.4 seconds.",
+      "action": "use",
+      "score": 0.9945
+     }
+    ],
+    "verdict": "supported",
+    "p": 0.9915,
+    "evidence": {
+     "document": "release-notes-4.2#1",
+     "quote": "Median sync time dropped to 2.4 seconds.",
+     "start": 13,
+     "end": 53,
+     "confidence": 0.999
+    },
+    "status": "green"
+   },
+   {
+    "claim": "Pro customers get email support with a 24-hour response target.",
+    "passages": [
+     {
+      "id": "release-notes-4.2#3",
+      "doc": "release-notes-4.2",
+      "title": "Release 4.2.",
+      "text": "Pro support: email support with a 24-hour response target.",
+      "action": "use",
+      "score": 0.9942
+     }
+    ],
+    "verdict": "supported",
+    "p": 0.9959,
+    "evidence": {
+     "document": "release-notes-4.2#3",
+     "quote": "Pro support: email support with a 24-hour response target.",
+     "start": 13,
+     "end": 71,
+     "confidence": 1
+    },
+    "status": "green"
+   },
+   {
+    "claim": "Offline mode is now available on iOS.",
+    "passages": [
+     {
+      "id": "release-notes-4.2#2",
+      "doc": "release-notes-4.2",
+      "title": "Release 4.2.",
+      "text": "Offline mode is now available on iOS. Android support is planned.",
+      "action": "use",
+      "score": 0.9944
+     }
+    ],
+    "verdict": "supported",
+    "p": 0.9962,
+    "evidence": {
+     "document": "release-notes-4.2#2",
+     "quote": "Offline mode is now available on iOS.",
+     "start": 13,
+     "end": 50,
+     "confidence": 1
+    },
+    "status": "green"
+   }
+  ],
+  "conflicts": [
+   {
+    "a": "pricing-2026-10",
+    "b": "pricing-2026-03",
+    "stale": "pricing-2026-03",
+    "findings": [
+     {
+      "a": "Acme Sync pricing (October 2026).",
+      "b": "Acme Sync pricing (March 2026).\n\nPro costs $12 per user per month, billed annually.\n\nSSO is included on the Business and Enterprise plans only."
+     }
+    ]
+   }
+  ],
+  "stale": [
+   "pricing-2026-03"
+  ],
+  "errors": [],
+  "trace": [
+   "compare: 3 pairs, 1 conflicting"
+  ],
+  "live": false,
+  "recorded": "2026-11-02T08:51:51.753Z"
+ }
+}
