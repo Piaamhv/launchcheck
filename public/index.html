@@ -1,0 +1,21 @@
+<!doctype html><html><head><meta charset="utf-8"><title>LaunchCheck</title><style>
+body{font:15px system-ui;max-width:1000px;margin:2rem auto;padding:0 1rem}textarea{width:100%;font:13px monospace}
+.c{border-left:6px solid #999;padding:.5rem .8rem;margin:.5rem 0;background:#fafafa}.green{border-color:#2a2}.amber{border-color:#e90}.red{border-color:#d22}
+.q{color:#555;font-size:13px}.tag{font-size:12px;background:#fee;padding:2px 6px;border-radius:4px}</style></head><body>
+<h1>LaunchCheck</h1><p>Check launch copy against your current product docs before it ships. <span id=mode></span></p>
+<label>Launch copy</label><textarea id=copy rows=5></textarea>
+<label>Source docs (JSON: [{id,date,text}])</label><textarea id=docs rows=10></textarea>
+<button id=go>Check claims</button><div id=out></div>
+<script>
+const $=id=>document.getElementById(id), esc=s=>String(s??'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+fetch('/fixtures/demo.json').then(r=>r.json()).then(d=>{$('copy').value=d.copy;$('docs').value=JSON.stringify(d.docs,null,1)});
+$('go').onclick=async()=>{$('out').textContent='Checking…';
+ const r=await fetch('/api/check',{method:'POST',body:JSON.stringify({copy:$('copy').value,docs:JSON.parse($('docs').value)})}).then(r=>r.json());
+ $('mode').textContent=r.live?'(live Clocked API)':'(mock mode – no API key)';
+ let h=r.conflicts.map(c=>`<p class=tag>Compare: <b>${esc(c.stale)}</b> conflicts with <b>${esc(c.stale===c.a?c.b:c.a)}</b> → treated as stale, excluded</p>`).join('');
+ h+=r.report.map(x=>`<div class="c ${x.status}"><b>${esc(x.verdict)}</b> ${esc(x.claim)}
+  ${x.evidence?`<div class=q>“${esc(x.evidence.quote)}” — ${esc(x.evidence.document)}</div>`:''}
+  ${x.staleSource?`<div class=tag>Matches stale source ${esc(x.staleSource)} – copy is out of date</div>`:''}
+  <div class=q>Rerank kept: ${x.passages.map(p=>esc(p.id)+' ('+p.action+')').join(', ')||'none'}</div></div>`).join('');
+ if(r.errors.length)h+=`<p class=tag>Degraded: ${esc(r.errors.join('; '))}</p>`; $('out').innerHTML=h;};
+</script></body></html>

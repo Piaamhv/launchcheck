@@ -1,0 +1,5 @@
+{"copy":"Acme Sync Pro now costs $12 per user per month. Every plan includes SSO. Files sync in under 2 seconds on average. Pro customers get 24/7 phone support. Offline mode is available on iOS and Android.",
+"docs":[
+{"id":"pricing-2026-10","date":"2026-10-01","text":"Acme Sync pricing (October 2026).\n\nPro costs $15 per user per month, billed annually.\n\nSSO is included on the Business and Enterprise plans only."},
+{"id":"pricing-2026-03","date":"2026-03-01","text":"Acme Sync pricing (March 2026).\n\nPro costs $12 per user per month, billed annually.\n\nSSO is included on the Business and Enterprise plans only."},
+{"id":"release-notes-4.2","date":"2026-10-15","text":"Release 4.2.\n\nMedian sync time dropped to 2.4 seconds.\n\nOffline mode is now available on iOS. Android support is planned.\n\nPro support: email support with a 24-hour response target."}]}

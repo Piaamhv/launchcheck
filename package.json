@@ -1,0 +1,2 @@
+{"name":"launchcheck","version":"0.1.0","type":"module","private":true,"license":"MIT","engines":{"node":">=20"},
+"scripts":{"start":"node server.js","test":"node test/smoke.js"}}
